@@ -1,24 +1,23 @@
-About Me and This Project
+About Me and This Project:
 
 My name is Sagar Shah. I used to value companies and securities for a living. About 4 months ago I decided to learn to code via the Flatiron School in NYC. 
 
-This project
+This project:
 
 I wanted to create something that made it easier and more convenient for people to get in touch with their congressmen and women. 
 
-In this first implementation of the tool, the value add is simply the ability to write (or copy/paste) a letter to your congressman or woman. The tool will create a letter for you addressed appropriately. We'll even send the letter out for you. 
+In this first implementation of the tool, the value add is simply the ability to write (or copy/paste) a letter to your congressman or woman. The tool will create a letter for you addressed appropriately. We'll even print it out, put it in an envelope, and send the letter out for you. The goal is to get more people engaged with their elected officials. 
 
 Later implementations: 
 
+We all know that big corporations, private interests, and generally those with money have an undue influence on national politics. Maybe we can change that!
+
+How do we change it? 
+
+1. Make sure our voices are heard. Tweets and petitions are very low effort communication forms. Letters are high engagement.
+2. Hold our senators accountable to how responsive to our concerns.
+
 Imagine this: If everyone sent their letters to Congress through this tool, and if we collected data on the response rate, then we'd have an interesting talking point about how much members of Congress actually cared about their constituency. 
-
-Bigger picture: 
-
-Why? It's easy to be convinced that large corporations and personal interests drive the actions of Congress. Undoubtedly, these forces play a significant role. But, citizens have the power to be heard. If w
-
-Maybe the reason more people don't send letters to Congress is because of the inconvenience associated with it. Maybe it's just the fact of typing it up, printing, and sending
 
 Concerns:
 What if people send stupid stuff? That's possible. If you make it easier for more people to use a certain form of communication, then you obviously have less control over what gets communicated. 
-
-Civic engagement in the United States is pretty bad. Most citizens don't really care to interact with their elected officials, even though many people clearly have something to say about politics during election cycles. 
