@@ -1,3 +1,5 @@
+# require 'prawn.rb'
+
 class LettersController < ApplicationController
   before_action :set_letter, only: [:show, :edit, :update, :destroy]
 
@@ -25,7 +27,9 @@ class LettersController < ApplicationController
   # POST /letters.json
   def create
     @letter = Letter.new(letter_params)
-    @letter.save
+    pdf = Prawn::Document.new
+    pdf.text(@letter.content)
+    pdf.render_file "assignment.pdf"
     respond_to do |format|
       if @letter.save
         format.html { redirect_to @letter, notice: 'Letter was successfully created.' }

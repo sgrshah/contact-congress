@@ -33,6 +33,7 @@ group :doc do
 end
 
 gem 'nokogiri'
+gem 'prawn'
 # gem 'open-uri'
 
 # Use ActiveModel has_secure_password
