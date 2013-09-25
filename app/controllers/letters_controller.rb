@@ -25,7 +25,7 @@ class LettersController < ApplicationController
   # POST /letters.json
   def create
     @letter = Letter.new(letter_params)
-
+    @letter.save
     respond_to do |format|
       if @letter.save
         format.html { redirect_to @letter, notice: 'Letter was successfully created.' }
@@ -69,6 +69,7 @@ class LettersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def letter_params
-      params[:letter]
+      params.require(:letter).permit(:content, :congressman_id)
+      # params[:letter]
     end
 end
