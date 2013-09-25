@@ -5,7 +5,6 @@ class CreateCongressmen < ActiveRecord::Migration
       t.string :name
       t.string :district
       t.string :chamber
-
     end
   end
 end

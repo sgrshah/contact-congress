@@ -11,8 +11,10 @@
     </div>
   <% end %>
 
-  <%=f.label :congressmen %>
-  <%=f.select :congressmen, @congressmen %>
+  <%#=f.label :congressmen %>
+  <%=f.select :congressman_id, Congressman.all.collect{|p| [p.name + " " + p.district, p.id] } %>
+
+  <%=f.text_area :content %>
   <div class="actions">
     <%= f.submit %>
   </div>

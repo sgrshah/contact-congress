@@ -15,7 +15,6 @@ class LettersController < ApplicationController
   # GET /letters/new
   def new
     @letter = Letter.new
-    @congressmen = Congressman.all
   end
 
   # GET /letters/1/edit

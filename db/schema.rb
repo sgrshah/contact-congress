@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(version: 20130923022845) do
     t.datetime "updated_at"
     t.string   "author"
     t.text     "content"
+    t.integer  "congressman_id"
   end
 
 end
