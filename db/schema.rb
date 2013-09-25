@@ -16,8 +16,9 @@ ActiveRecord::Schema.define(version: 20130923022845) do
   create_table "congressmen", force: true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "first_name"
-    t.string   "last_name"
+    t.string   "name"
+    t.string   "district"
+    t.string   "chamber"
   end
 
   create_table "letters", force: true do |t|
