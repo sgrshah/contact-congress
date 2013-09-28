@@ -1,0 +1,2 @@
+class LetterStepsController < ApplicationController
+end

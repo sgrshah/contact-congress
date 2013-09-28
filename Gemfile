@@ -34,6 +34,7 @@ end
 
 gem 'nokogiri'
 gem 'prawn'
+gem 'wicked'
 # gem 'open-uri'
 
 # Use ActiveModel has_secure_password
