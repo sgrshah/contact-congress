@@ -1,6 +1,6 @@
 ContactCongress::Application.routes.draw do
   resources :letters
-
+  resources :letter_steps
   root 'letters#new'
 
   # The priority is based upon order of creation: first created -> highest priority.

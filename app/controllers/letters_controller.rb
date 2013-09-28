@@ -26,24 +26,24 @@ class LettersController < ApplicationController
   # POST /letters
   # POST /letters.json
   def create
-    @letter = Letter.new(letter_params)
-    pdf = Prawn::Document.new
-    pdf.text(@letter.content)
-    pdf.render_file "assignment.pdf"
-    respond_to do |format|
+    @letter = Letter.new
       if @letter.save
-        format.html { redirect_to @letter, notice: 'Letter was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @letter }
+        session[:letter_id] = @letter.id
+        redirect_to letter_steps_path
+        # format.html { redirect_to @letter, notice: 'Letter was successfully created.' }
+        # format.json { render action: 'show', status: :created, location: @letter }
       else
-        format.html { render action: 'new' }
-        format.json { render json: @letter.errors, status: :unprocessable_entity }
+        render action: 'new'
+        # format.json { render json: @letter.errors, status: :unprocessable_entity }
       end
-    end
   end
 
   # PATCH/PUT /letters/1
   # PATCH/PUT /letters/1.json
   def update
+    # pdf = Prawn::Document.new
+    # pdf.text(@letter.content)
+    # pdf.render_file "assignment.pdf"
     respond_to do |format|
       if @letter.update(letter_params)
         format.html { redirect_to @letter, notice: 'Letter was successfully updated.' }
