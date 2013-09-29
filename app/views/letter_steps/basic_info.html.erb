@@ -1,17 +1,18 @@
 basic_info.html.erb
-
+<br>
+<br>
 <%= form_for @letter, url: wizard_path do |f| %>
-	<%=f.label :topic_areas%>
-	<%=f.check_box :taxation%>
-	<%=f.label :taxation%>
-	<%=f.check_box :foreign_affairs%>
-	<%=f.label :foreign_affairs%>
-	<%=f.check_box :gun_policy%>
-	<%=f.label :gun_policy%>
 
+	<%=f.label :issue_ids, "Select issues that apply"%>
+	<br>
+	<%=f.select(:issue_ids, Issue.all.collect{|i| [i.title,i.id]}, {}, {multiple: true})%>
+	<br>
+	<br>
 	<%=f.label :zip_code %>
+	<br>
 	<%=f.text_field :zip_code%>
-
+	<br>
+	<br>
 
 	<%= f.submit "Find your congressman" %>
 <% end %>

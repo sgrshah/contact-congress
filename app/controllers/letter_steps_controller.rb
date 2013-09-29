@@ -1,6 +1,6 @@
 class LetterStepsController < ApplicationController
 	include Wicked::Wizard
-	steps :basic_info, :choose_congressman, :personal_info, :content
+	steps :basic_info, :choose_congressman, :content, :personal_info
 
 	def show
 		@letter = current_letter
@@ -16,7 +16,8 @@ class LetterStepsController < ApplicationController
 	private
 
   def letter_params
-    params.require(:letter).permit(:zip_code, :content, :congressman_id)
-    # params[:letter]
+    params.require(:letter).permit(:zip_code, :content, 
+    	:name, :email, :telephone, :street, 
+    	:apartment, :state, :issue_ids => [])
   end
 end

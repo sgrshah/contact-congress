@@ -1,5 +1,7 @@
 content.html.erb
 
 <%=form_for @letter, url: wizard_path do |f|%>
-	<%= f.submit "You're done" %>
+	<%= f.label :content%>
+	<%= f.text_area :content%>
+	<%= f.submit "one last thing" %>
 <% end %>

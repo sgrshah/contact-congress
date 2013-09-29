@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130929014227) do
+ActiveRecord::Schema.define(version: 20130929155237) do
 
   create_table "congressman_letters", force: true do |t|
     t.datetime "created_at"
@@ -48,6 +48,12 @@ ActiveRecord::Schema.define(version: 20130929014227) do
     t.text     "content"
     t.integer  "congressman_id"
     t.string   "zip_code"
+    t.string   "name"
+    t.string   "email"
+    t.string   "telephone"
+    t.string   "street"
+    t.string   "apartment"
+    t.string   "state"
   end
 
 end
