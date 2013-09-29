@@ -12,6 +12,7 @@
   <tbody>
     <% @letters.each do |letter| %>
       <tr>
+        <td><%= letter.zip_code %></td>
         <td><%= link_to 'Show', letter %></td>
         <td><%= link_to 'Edit', edit_letter_path(letter) %></td>
         <td><%= link_to 'Destroy', letter, method: :delete, data: { confirm: 'Are you sure?' } %></td>

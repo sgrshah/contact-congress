@@ -1,0 +1,17 @@
+basic_info.html.erb
+
+<%= form_for @letter, url: wizard_path do |f| %>
+	<%=f.label :topic_areas%>
+	<%=f.check_box :taxation%>
+	<%=f.label :taxation%>
+	<%=f.check_box :foreign_affairs%>
+	<%=f.label :foreign_affairs%>
+	<%=f.check_box :gun_policy%>
+	<%=f.label :gun_policy%>
+
+	<%=f.label :zip_code %>
+	<%=f.text_field :zip_code%>
+
+
+	<%= f.submit "Find your congressman" %>
+<% end %>

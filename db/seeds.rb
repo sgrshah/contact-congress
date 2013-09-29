@@ -17,3 +17,8 @@ end
 sen_names_array.each_with_index do |congressman,index|
 		Congressman.create(:name => congressman, :district => sen_districts_array[index], :chamber => "Senate")
 end
+
+issues = ["Agriculture", "Animal Welfare", "Banking and Financial Services", "Budget", "Casework", "Census"]
+issues.each do |issue|
+	Issue.create(:title => issue)
+end

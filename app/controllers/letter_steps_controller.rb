@@ -9,8 +9,14 @@ class LetterStepsController < ApplicationController
 
 	def update
 		@letter = current_letter
-		@letter.attributes = params[:letter]
+		@letter.attributes = letter_params
 		render_wizard @letter
 	end
+	
+	private
 
+  def letter_params
+    params.require(:letter).permit(:zip_code, :content, :congressman_id)
+    # params[:letter]
+  end
 end

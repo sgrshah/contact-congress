@@ -11,7 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130923022845) do
+ActiveRecord::Schema.define(version: 20130929014227) do
+
+  create_table "congressman_letters", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "congressman_id"
+    t.integer  "letter_id"
+  end
 
   create_table "congressmen", force: true do |t|
     t.datetime "created_at"
@@ -21,12 +28,26 @@ ActiveRecord::Schema.define(version: 20130923022845) do
     t.string   "chamber"
   end
 
+  create_table "issues", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "title"
+  end
+
+  create_table "letter_issues", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "letter_id"
+    t.integer  "issue_id"
+  end
+
   create_table "letters", force: true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "author"
     t.text     "content"
     t.integer  "congressman_id"
+    t.string   "zip_code"
   end
 
 end
