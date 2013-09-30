@@ -1,14 +1,15 @@
-<h1>Welcome to Contact Congress</h1>
+<div class="jumbotron">
+	<h1>Welcome to Contact Congress</h1>
+	<p>Thinking of sending a letter to your congressman?</p>
+	<%= form_for(@letter) do |f| %>
+
+	  <div class="actions">
+	    <%= f.submit "Get Started!", class: "btn btn-primary btn-lg"%>
+	  </div>
+	<% end %>
+</div>
+
+
+<%#= link_to 'Back', letters_path %>
 
 <%#= render 'form' %>
-
-<h2>Thinking of sending a letter to your congressman?</h2>
-<%= form_for(@letter) do |f| %>
-
-  <div class="actions">
-    <%= f.submit "Get Started!"%>
-  </div>
-<% end %>
-
-
-<%= link_to 'Back', letters_path %>

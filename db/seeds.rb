@@ -11,11 +11,16 @@ sen_names_array = sen_doc.search('table:nth-child(16) td:nth-child(5) a').collec
 sen_districts_array = sen_doc.search('table:nth-child(16) td:nth-child(2)').collect{|hyperlink| hyperlink.text}#.select{|item| item.match('\A\w')}
 
 rep_names_array.each_with_index do |congressman,index|
-		Congressman.create(:name => congressman, :district => rep_districts_array[index], :chamber => "House")
+		Congressman.create(:name => congressman, 
+			:state => rep_districts_array[index].split("-").first,
+			:district => rep_districts_array[index].split("-").last, 
+			:chamber => "House")
 end
 
 sen_names_array.each_with_index do |congressman,index|
-		Congressman.create(:name => congressman, :district => sen_districts_array[index], :chamber => "Senate")
+		Congressman.create(:name => congressman, 
+			:state => sen_districts_array[index], 
+			:chamber => "Senate")
 end
 
 issues = ["Agriculture", "Animal Welfare", "Banking and Financial Services", "Budget", "Casework", "Census"]
