@@ -15,6 +15,6 @@ class Letter < ActiveRecord::Base
 				relevant_congressmen << congressman
 			end
 		end
-		self.congressmen = relevant_congressmen.uniq!
+		self.congressmen = relevant_congressmen.uniq
 	end
 end
