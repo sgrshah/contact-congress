@@ -12,7 +12,20 @@ sen_districts_array = sen_doc.search('table:nth-child(16) td:nth-child(2)').coll
 
 fips = open('http://www.itl.nist.gov/fipspubs/fip55-3.htm')
 fips_doc = Nokogiri::HTML(fips)
-fips_info_array = fips_doc.search('table tr').collect{|row| row.text}.shift.shift
+fips_array = fips_doc.search('table tr').collect{|row| row.text}
+fips_array = fips_array.delete_if{|x| x.match('(\A\s)|(\A\D)') }
+fips_array = fips_array.collect do |row| 
+	a = row.split(" ")
+	a.slice!(-2..-1)
+	state_name_array = a.slice!(3..-1).join(" ")
+	a << state_name_array
+end
+
+fips_array.each do |row|
+	State.create(	:fips_code => row[1].to_i,
+								:abbreviation => row[2],
+								:name => row[3])
+end
 
 rep_names_array.each_with_index do |congressman,index|
 		Congressman.create(:name => congressman, 
