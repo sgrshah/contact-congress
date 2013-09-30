@@ -1,17 +1,29 @@
-personal_info.html.erb
-
-<%=form_for @letter, url: wizard_path do |f|%>
-	<%= f.label :name %>
-	<%= f.text_field :name%><br>
-	<%= f.label :email %>
-	<%= f.email_field :email%><br>
-	<%= f.label :telephone %>
-	<%= f.telephone_field :telephone%><br>
-	<%= f.label :street %>
-	<%= f.text_field :street%><br>
-	<%= f.label :apartment %>
-	<%= f.text_field :apartment%><br>
-	<%= f.label :state %>
-	<%= f.text_field :state%><br>
-	<%= f.submit "Next, and final step - the content!" %>
-<% end %>
+<div class="col-md-6">
+	<%=form_for @letter, url: wizard_path do |f|%>
+		<div class="form-group">
+			<%= f.label :name %><br>
+			<%= f.text_field :name, class: "form-control"%>
+		</div>
+		<div class="form-group">
+			<%= f.label :email %><br>
+			<%= f.email_field :email, class: "form-control"%>
+		</div>
+		<div class="form-group">
+			<%= f.label :telephone%><br>
+			<%= f.telephone_field :telephone, class: "form-control"%>
+		</div>
+		<div class="form-group">
+			<%= f.label :street %><br>
+			<%= f.text_field :street, class: "form-control"%>
+		</div>
+		<div class="form-group">
+			<%= f.label :apartment %><br>
+			<%= f.text_field :apartment, class: "form-control"%>
+		</div>
+		<div class="form-group">
+			<%= f.label :state %><br>
+			<%= f.text_field :state, class: "form-control"%>
+		</div>
+		<%= f.submit "Next, and final step - the content!", class: "btn btn-default" %>
+	<% end %>
+</div>

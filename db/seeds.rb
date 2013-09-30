@@ -10,6 +10,10 @@ sen_doc = Nokogiri::HTML(sen_webpage)
 sen_names_array = sen_doc.search('table:nth-child(16) td:nth-child(5) a').collect{|hyperlink| hyperlink.text}#.select{|item| item.match('\A\w')}
 sen_districts_array = sen_doc.search('table:nth-child(16) td:nth-child(2)').collect{|hyperlink| hyperlink.text}#.select{|item| item.match('\A\w')}
 
+fips = open('http://www.itl.nist.gov/fipspubs/fip55-3.htm')
+fips_doc = Nokogiri::HTML(fips)
+fips_info_array = fips_doc.search('table tr').collect{|row| row.text}.shift.shift
+
 rep_names_array.each_with_index do |congressman,index|
 		Congressman.create(:name => congressman, 
 			:state => rep_districts_array[index].split("-").first,

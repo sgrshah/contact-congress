@@ -1,18 +1,16 @@
-basic_info.html.erb
-<br>
-<br>
-<%= form_for @letter, url: wizard_path do |f| %>
+<div class="col-md-6">
+	<%= form_for @letter, url: wizard_path do |f| %>
 
-	<%=f.label :issue_ids, "Select issues that apply"%>
-	<br>
-	<%=f.select(:issue_ids, Issue.all.collect{|i| [i.title,i.id]}, {}, {multiple: true})%>
-	<br>
-	<br>
-	<%=f.label :zip_code %>
-	<br>
-	<%=f.text_field :zip_code%>
-	<br>
-	<br>
+		<div class="form-group">
+			<%=f.label :issue_ids, "Select issues that apply"%><br>
+			<%=f.select(:issue_ids, Issue.all.collect{|i| [i.title,i.id]}, {}, {multiple: true})%>
+		</div>
 
-	<%= f.submit "Find your congressman" %>
-<% end %>
+		<div class="form-group">
+			<%=f.label :zip_code %><br>
+			<%=f.text_field :zip_code, class: "form-control"%>
+		</div>
+
+		<%= f.submit "Find your congressman", class: "btn btn-default"%>
+	<% end %>
+</div>

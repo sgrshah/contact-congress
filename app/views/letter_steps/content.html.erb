@@ -1,7 +1,7 @@
-content.html.erb
-
 <%=form_for @letter, url: wizard_path do |f|%>
-	<%= f.label :content%>
-	<%= f.text_area :content%>
-	<%= f.submit "one last thing" %>
+	<div class="form-group">
+		<%= f.label :content%><br>
+		<%= f.text_area :content%>
+	</div>
+	<%= f.submit "one last thing", class: "btn btn-default" %>
 <% end %>
