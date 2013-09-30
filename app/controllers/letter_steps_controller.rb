@@ -12,7 +12,7 @@ class LetterStepsController < ApplicationController
 		@letter.attributes = letter_params
 		render_wizard @letter
 	end
-	
+
 	private
 
   def letter_params

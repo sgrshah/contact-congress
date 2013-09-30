@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class DistrictTest < ActiveSupport::TestCase
+class CongressionalMapperTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

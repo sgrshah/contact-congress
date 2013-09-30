@@ -11,7 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130930145020) do
+ActiveRecord::Schema.define(version: 20130930164352) do
+
+  create_table "congressional_mappers", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "state_id"
+    t.string   "zip_code"
+    t.string   "district"
+  end
 
   create_table "congressman_letters", force: true do |t|
     t.datetime "created_at"
@@ -26,12 +34,7 @@ ActiveRecord::Schema.define(version: 20130930145020) do
     t.string   "name"
     t.string   "district"
     t.string   "chamber"
-    t.string   "state"
-  end
-
-  create_table "districts", force: true do |t|
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.integer  "state_id"
   end
 
   create_table "issues", force: true do |t|
@@ -59,7 +62,7 @@ ActiveRecord::Schema.define(version: 20130930145020) do
     t.string   "telephone"
     t.string   "street"
     t.string   "apartment"
-    t.string   "state"
+    t.string   "AddStateToLetter"
   end
 
   create_table "states", force: true do |t|

@@ -21,22 +21,37 @@ fips_array = fips_array.collect do |row|
 	a << state_name_array
 end
 
+districts = File.open('db/districts.txt')
+districts = districts.collect do |data|
+	l = data.chomp
+	l = l.split(",")
+	l[0] = l[0].to_i
+	l
+end
+
 fips_array.each do |row|
 	State.create(	:fips_code => row[1].to_i,
 								:abbreviation => row[2],
 								:name => row[3])
 end
 
+districts.each do |district|
+	CongressionalMapper.create(	:state => State.find_by_fips_code(district[0]),
+															:zip_code => district[1],
+															:district => district[2])
+end
+
 rep_names_array.each_with_index do |congressman,index|
-		Congressman.create(:name => congressman, 
-			:state => rep_districts_array[index].split("-").first,
+		Congressman.create(
+			:name => congressman, 
+			:state => State.find_by_abbreviation(rep_districts_array[index].split("-").first),
 			:district => rep_districts_array[index].split("-").last, 
 			:chamber => "House")
 end
 
 sen_names_array.each_with_index do |congressman,index|
 		Congressman.create(:name => congressman, 
-			:state => sen_districts_array[index], 
+			:state => State.find_by_name(sen_districts_array[index]), 
 			:chamber => "Senate")
 end
 

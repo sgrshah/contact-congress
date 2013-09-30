@@ -1,2 +1,9 @@
+<ul>
+	<% @letter.relevant_congressmen.each do |congressman|%>
+		<li><%=congressman.name%></li>
+	<% end %>
+</ul>
+
+
 <a href="#" class="btn btn-default">Give me a list of the congressman</a>
 <a href="/letter_steps/content" class="btn btn-default">help me write</a>
