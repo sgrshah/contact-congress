@@ -10,6 +10,9 @@ class LetterStepsController < ApplicationController
 	def update
 		@letter = current_letter
 		@letter.attributes = letter_params
+		if letter_params[:zip_code]
+			@letter.set_relevant_congressmen()
+		end
 		render_wizard @letter
 	end
 
