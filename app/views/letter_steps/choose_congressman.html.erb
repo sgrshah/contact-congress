@@ -1,10 +1,7 @@
 <ul>
 	<% @letter.congressmen.each do |congressman|%>
-		<li><%=congressman.name%></li>
+		<li><%="#{congressman.name}, #{congressman.state.name}, #{congressman.chamber}"%></li>
 	<% end %>
 </ul>
 
-
-
-<a href="#" class="btn btn-default">Give me a list of the congressman</a>
-<a href="/letter_steps/content" class="btn btn-default">help me write</a>
+<a href="/letter_steps/content" class="btn btn-default">Write your content</a>

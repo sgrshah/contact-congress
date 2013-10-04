@@ -1,7 +1,17 @@
-<%=form_for @letter, url: wizard_path do |f|%>
-	<div class="form-group">
-		<%= f.label :content%><br>
-		<%= f.text_area :content%>
-	</div>
-	<%= f.submit "one last thing", class: "btn btn-default" %>
-<% end %>
+<div class="col-md-6">
+	<%=form_for @letter, url: wizard_path do |f|%>
+		<div class="form-group">
+			<%= f.label :content%><br>
+			<%= f.text_area :content%>
+		</div>
+		<%= f.submit "One last step", class: "btn btn-default" %>
+	<% end %>
+</div>
+<div class="col-md-6">
+	<p>To write an effective letter to congress, consider these guidelines:</p>
+	<ul>
+		<li>In paragraph one, say who you are and why it's important. And, talk about who you are, where you are from, and why this issue impacts you.</li>
+		<li>Provide specific detail about how the issue impacts you and others. If a specific bill is involved, cite the specific bill.</li>
+		<li>In the final paragraph, outline what action you would like taken. This could be a change in policy or a specific vote on a particular bill.</li>
+	</ul>
+</div>

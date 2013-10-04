@@ -1,10 +1,11 @@
 <div class="col-md-6">
+	<p>Congressmen and women that represent you are more likely to listen to and address your concerns. To find your congressmen, enter your zip code below.</p>
 	<%= form_for @letter, url: wizard_path do |f| %>
 
-		<div class="form-group">
-			<%=f.label :issue_ids, "Select issues that apply"%><br>
-			<%=f.select(:issue_ids, Issue.all.collect{|i| [i.title,i.id]}, {}, {multiple: true})%>
-		</div>
+<!-- 		<div class="form-group">
+			<%#=f.label :issue_ids, "Select issues that apply"%><br>
+			<%#=f.select(:issue_ids, Issue.all.collect{|i| [i.title,i.id]}, {}, {multiple: true})%>
+		</div> -->
 
 		<div class="form-group">
 			<%=f.label :zip_code %><br>

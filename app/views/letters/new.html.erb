@@ -1,15 +1,15 @@
 <div class="jumbotron">
-	<h1>Welcome to Contact Congress</h1>
-	<p>Thinking of sending a letter to your congressman?</p>
+	<h2>We help you send letters to congress</h2>
+	<ul>
+		<li>Find the congressmen and women that you should contact</li>
+		<li>Effectively structure your letter</li>
+		<li>Let us format and mail the letter so you don't have to</li>
+	</ul>
+	<p>In 4 easy steps you can let your voice be heard. Start by letting us find the congressmen you should contact.</p>
 	<%= form_for(@letter) do |f| %>
 
 	  <div class="actions">
-	    <%= f.submit "Get Started!", class: "btn btn-primary btn-lg"%>
+	    <%= f.submit "Find your congressmen", class: "btn btn-primary btn-lg"%>
 	  </div>
 	<% end %>
 </div>
-
-
-<%#= link_to 'Back', letters_path %>
-
-<%#= render 'form' %>
