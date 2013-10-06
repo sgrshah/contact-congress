@@ -6,3 +6,16 @@ textarea {
 	width: 100%;
 	height: 300px;
 }
+
+html, body {
+	height: 100%;
+}
+
+.container {
+	height: 100%;
+}
+
+#content {
+	height: 100%;	
+	background-image: url('light-blue.webp');
+}

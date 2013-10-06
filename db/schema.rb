@@ -11,7 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130930164352) do
+ActiveRecord::Schema.define(version: 20131006015323) do
+
+  create_table "addresses", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "street"
+    t.string   "city"
+    t.string   "state_id"
+    t.string   "zip_code"
+    t.integer  "congressman_id"
+  end
 
   create_table "congressional_mappers", force: true do |t|
     t.datetime "created_at"
